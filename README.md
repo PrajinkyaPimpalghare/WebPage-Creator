@@ -6,3 +6,12 @@ Data in the HTML page can be modified by passing different kind of data inside p
 
 It is very minimal example of jinja2 module usage , refer it for basic learning.
 Most of basic functionalty has been taken care in this example.
+Importance Of Files:
+
+ModuleInstaller.bat >> It will check python is present or not and it will install jinja2 module.
+WepPage.html >> It is the created dynamic HTML page
+WebPage.png >> Basic example of dynamic page
+WebPageCreator.py >> Main Python code
+ReportModule.html it is the reference/input for Python file.
+
+Thanks For Visting:)
