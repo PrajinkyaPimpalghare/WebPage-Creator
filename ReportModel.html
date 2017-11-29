@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	table
+	{
+		border-collapse: collapse;
+	}
+	table th
+	{
+		font-weight: bold;
+	}
+	table th, table td
+	{
+		padding: 0px;
+	}
+	html, body
+	{
+		height:100%;
+		width:100%;
+		padding:0;
+		margin:0;
+	}
+	a
+	{
+		text-decoration: none;
+		color: black
+	}
+</style>
+</head>
+<title>{{My_Report_Page}}</title>
+<body>
+<table id="Welcome" width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr style='width: 100%; background-image: url("../../../../../img/bg3.png"); background-repeat: repeat-x;'>
+		<td>
+			<img style="border: 0px currentColor; border-image: none;'width: 100%;'" alt="Alternate Text" src="https://www.google.co.in/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiStPPtu-TXAhXJFpQKHTZsCtIQjRwIBw&url=https%3A%2F%2Fwww.videoblocks.com%2Fvideo%2Fwelcome-bokeh-text-background-bth-r5wuxixqq6kck%2F&psig=AOvVaw152vGT4lPCFBimnRZvHFpV&ust=1512068379949008">
+		</td>
+	</tr>
+</table>
+{% for key,value in basic_data.items() %}
+<p style="cursor:default;margin-left:18px;"><b>{{key}}:{{value}}</b></p>
+{% endfor %}
+<p style="cursor:default;margin-left:18px;"><b style="color:blue;">Click on icons to open the logs also explore other hyper links on this page</b></p>
+<table id="Tabel" width="95%" style="border: 2px solid black;margin-left:18px" border="1" cellspacing="0" cellpadding="0">
+	<caption style="cursor:default;text-align:left;font-size:18;font-weight:bold">Table</caption>
+	<tr>
+		<th width="230px" style="cursor:default;border: 1px solid black; border-image: none; color: rgb(255, 153, 51);background-color: rgb(0, 51, 102);">Name</th>
+		<th width="230px" style="cursor:default;border: 1px solid black; border-image: none; color: rgb(255, 153, 51);background-color: rgb(0, 51, 102);">ID</th>
+		{% for key,value in personalinfo.items() %}
+		<th width="70px" style="cursor:default;border: 1px solid black; border-image: none; color: rgb(255, 153, 51);background-color: rgb(0, 51, 102);">{{key}}</th>
+		{% endfor %}
+	</tr>
+	<tr>
+        {% if age == '0' %}
+		<td style="color:black;text-align:center;" bgcolor="#9fbf5f" title="Passed"><a href=""/>{{personalinfo["Name"]}}</td>
+        {% elif age == '1' %}
+        <td style="color:black;text-align:center;" bgcolor="#ff1919" title="Failed"><a href=""/>{{personalinfo["Name"]}}</td>
+        {% elif age == '52' %}
+        <td style="color:black;text-align:center;" bgcolor="#FFFF00" title="Tolerated"><a href=""/>{{personalinfo["Name"]}}</td>
+        {% elif age == '55' %}
+        <td style="color:black;text-align:center;" bgcolor="##d4d4d4" title="Aborted/NotTriggered"><a href=""/>{{personalinfo["Name"]}}</td>
+        {% else %}
+        <td style="color:black;text-align:center;" bgcolor="#FFA500" title="Something Went Wrong Check overall result"><a href=""/>{{personalinfo["Name"]}}</td>
+        {% endif %}
+		<td style="color:black;text-align:center;" bgcolor="#FFFFCC"><a href=""/>{{ID}}</td>
+		{% for key,value in personalinfo.items() %}
+		<th width="70px" style="cursor:default;border: 1px solid black; border-image: none; color: rgb(255, 153, 51);background-color: rgb(0, 51, 102);">{{value}}</th>
+		{% endfor %}
+    </tr>
+</table>
+<br>
+<br>
+</body>
+</html>
